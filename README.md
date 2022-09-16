@@ -14,7 +14,7 @@ MasterWorker also handles the signals. When a signal (SIGHUP, SIGINT, SIGQUIT, S
 
 Eventually, Workers are shut down, Collector process is killed and the program is forced to end.
 
-- Collector just waits to recieve data from Workers and prints it on the console
+- Collector just waits to recieve data from Workers and prints it on the console.
 
 # How to use
 There is a makefile that compiles farm.c and generafile.c and then a test.sh is runned.
