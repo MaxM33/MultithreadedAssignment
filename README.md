@@ -32,6 +32,8 @@ You can even test the farm program by yourself, with this command:
 gcc -pthread -o farm farm.c
 ./farm '-n' <integer> '-q' <integer> '-t' <integer> <list of files>
 ```
+but you will need a list of binary files, which can be generated using 'generafile'. 
+
 Options:
 - '-n' <integer> : number of threads (default is 4).
 - '-q' <integer> : number of requests that can be made by MasterWorker at the same time (default is 8).
