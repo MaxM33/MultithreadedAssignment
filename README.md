@@ -37,4 +37,4 @@ Options:
 - '-q' <integer> : number of requests that can be made by MasterWorker at the same time (default is 8).
 - '-t' <integer> : the delay between each request made by MasterWorker (in milliseconds, default is 0).
 
-The order of the options is irrilevant and can be omitted in the command.
+The order of the options is irrilevant and the options can be omitted in the command.
