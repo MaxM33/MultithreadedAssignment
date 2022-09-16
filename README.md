@@ -29,6 +29,7 @@ should do the trick.
 
 You can even test the farm program by yourself, with this command:
 ```
+gcc -pthread -o farm farm.c
 ./farm '-n' <integer> '-q' <integer> '-t' <integer> <list of files>
 ```
 Options:
