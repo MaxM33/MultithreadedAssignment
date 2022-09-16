@@ -10,7 +10,6 @@ then
     echo "Compilare farm, eseguibile mancante!"
     exit 1
 fi
-
 #
 # il file expected.txt contiene i risultati attesi per i file
 # generati nel seguito con il programma generafile
@@ -38,7 +37,6 @@ cat > expected.txt <<EOF
 2322416554 file18.dat
 2560452408 file20.dat
 EOF
-
 #
 # generafile genera i file file100.dat file150.dat file19.dat file116.dat...
 # in modo deterministico
@@ -64,7 +62,6 @@ if [[ $? != 0 ]]; then
 else
     echo "test2 passed"
 fi
-
 #
 # esecuzione "rallentata" con 1 thread, dopo circa 5 secondi viene
 # inviato il segnale SIGTERM (comando pkill) e si valuta l'exit status
@@ -79,8 +76,6 @@ if [[ $? != 0 ]]; then
 else
     echo "test3 passed"
 fi
-
-
 #
 # esecuzione con valgrind. Se valgrind trova dei problemi esce con 
 # exit status 1.
