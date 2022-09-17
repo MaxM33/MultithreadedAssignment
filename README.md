@@ -10,11 +10,11 @@ Each of these threads (named Workers from now on) get one task from the MasterWo
 
 Then, Workers send their results and name of the processed file to the Collector, via a socket connection established between the latter and the MasterWorker.
 
-MasterWorker also handles the signals. When a signal (SIGHUP, SIGINT, SIGQUIT, SIGTERM) is recieved, the Workers stop accepting new requests from the MasterWorker, but files that were planned to be processed already are still being processed.
+MasterWorker also handles the signals. When a signal (SIGHUP, SIGINT, SIGQUIT, SIGTERM) is received, the Workers stop accepting new requests from the MasterWorker, but files that were planned to be processed already are still being processed.
 
 Eventually, Workers are shut down, Collector process is killed and the program is forced to end.
 
-- Collector just waits to recieve data from Workers and prints it on the console.
+- Collector just waits to receive data from Workers and prints it on the console.
 
 # How to use
 There is a makefile that compiles farm.c and generafile.c and then a test.sh is runned.
