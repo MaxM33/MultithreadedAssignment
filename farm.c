@@ -32,7 +32,7 @@ struct sockaddr_un server;
 int qlen = 8, activeWorkers = 0, numfiles = 0, fd_skt, delay = 0;
 char **files;
 
-// when signal is recieved, execution of the program is forced to end
+// when signal is received, execution of the program is forced to end
 void sighandler(int sign) {
   pthread_mutex_lock(&mutex1);
   numfiles = 0;
@@ -111,7 +111,7 @@ int main(int argc, char *argv[]) {
       i++;
     } else {
       if (strlen(argv[i]) > MAX_STRING_SIZE) { // skips if filename length > 255
-        // printf("Maximum file name length exceeded\n");
+        // printf("File '%s' exceeded the max filename length\n", argv[i]);
         continue;
       }
       if (stat(argv[i], buf) == -1) { // stat to check 'st_mode'
@@ -181,7 +181,7 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
       }
       /*
-        When a signal is recieved by masterworker, if there are threads that are
+        When a signal is received by masterworker, if there are threads that are
         already in queue (usually it's the case), those threads finish to work
         on the files and send results to this process (collector), while the
         remaining threads are terminated. Some garbage data still remains on the
