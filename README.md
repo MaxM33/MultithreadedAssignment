@@ -8,7 +8,7 @@ farm is a program in which there are 2 processes: MasterWorker (main) and Collec
 
 Each of these threads (named Workers from now on) get one task from the MasterWorker, the task is a regular binary file (checked if regular by MasterWorker), and they do some operations with the content of the files.
 
-Then, Workers send their results and name of the processed file to the Collector, via a socket connection established between the latter and the MasterWorker.
+Then, Workers send their results and name of the processed file to the Collector through a socket connection established between the latter and the MasterWorker.
 
 MasterWorker also handles the signals. When a signal (SIGHUP, SIGINT, SIGQUIT, SIGTERM) is received, the Workers stop accepting new requests from the MasterWorker, but files that were planned to be processed already are still being processed.
 
